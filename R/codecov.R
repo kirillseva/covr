@@ -126,12 +126,11 @@ to_codecov <- function(x) {
   }
 
   res <- mapply(
-    function(name, source, coverage) {
+    function(name, coverage) {
       list("name" = jsonlite::unbox(name),
         "coverage" = coverage)
     },
     coverage_names,
-    sources,
     coverages,
     SIMPLIFY = FALSE,
     USE.NAMES = FALSE)
